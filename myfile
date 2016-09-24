@@ -1,0 +1,19 @@
+{
+<Phrase>
+<Sujet> <Verbe> <Complement> ;
+}
+{
+<Sujet>
+Il ;
+Elle ;
+}
+{
+<Verbe>
+est ;
+devient ;
+}
+{
+<Complement>
+rapide ;
+sympa ;
+}
