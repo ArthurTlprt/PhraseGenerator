@@ -20,8 +20,9 @@ void Phrase::print() {
   this->phrase = grammar.getAxiome();
   Phrase::generate();
   for(auto item: phrase) {
-    std::cout << item << " ";
+    std::cout << item;
   }
+  std::cout << endl;
 }
 
 bool Phrase::isWord() {

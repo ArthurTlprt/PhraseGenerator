@@ -8,7 +8,7 @@
 using namespace std;
 
 int main() {
-	Grammar myprod("myfile");
+	Grammar myprod("expressions");
 
 	Phrase maphrase(myprod);
 	maphrase.print();

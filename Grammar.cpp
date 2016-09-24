@@ -62,7 +62,7 @@ void Grammar::readFile() {
 						this->axiome = split(line.substr(0, line.length() -1), ' ');
 						isAxiome = false;
 					}else{
-						productions[currentDiam].push_back( line.substr(0, line.length() -2) );
+						productions[currentDiam].push_back( line.substr(0, line.length() -1) );
 					}
 				}
 			}
