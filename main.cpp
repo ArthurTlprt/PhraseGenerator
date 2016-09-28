@@ -12,5 +12,10 @@ int main() {
 
 	Phrase maphrase(myprod);
 	maphrase.print();
+
+	Grammar grammardepalyndrome("palyndrome");
+
+	Phrase monpalyndrome(grammardepalyndrome);
+	monpalyndrome.print();
 	return 0;
 }

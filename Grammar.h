@@ -15,6 +15,7 @@ class Grammar {
 		Grammar(string fileName);
 		map<string, vector<string> > getProductions();
 		vector<string> getAxiome(){ return axiome; }
+		string getProduction(string);
 	private:
 		string fileName;
 		vector<string> axiome;

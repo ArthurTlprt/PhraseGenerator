@@ -17,7 +17,7 @@ class Phrase {
 private:
   vector<string> phrase;
   void generate();
-  bool isWord();
+  bool isWord(string item);
   Grammar grammar;
 public:
   Phrase(Grammar grammar);

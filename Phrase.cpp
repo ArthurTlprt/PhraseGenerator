@@ -10,7 +10,7 @@
 #include "Grammar.h"
 #include <iostream>
 #include <string>
-#include <time.h>
+
 
 Phrase::Phrase(Grammar grammar) {
   this->grammar = grammar;
@@ -19,27 +19,34 @@ Phrase::Phrase(Grammar grammar) {
 void Phrase::print() {
   this->phrase = grammar.getAxiome();
   Phrase::generate();
+  cout << "debut :";
   for(auto item: phrase) {
     std::cout << item;
   }
-  std::cout << endl;
+  std::cout << ": fin" << endl;
 }
 
-bool Phrase::isWord() {
-  for(auto it: phrase) {
-    std::cout << it << std::endl;
-    if(it.find("<") != -1){
+bool Phrase::isWord(string item) {
+  if(item.find("<") != string::npos) {
       return false;
-    }
   }
   return true;
 }
+
 void Phrase::generate() {
-  int rd;
-  srand (time(NULL));
-  for(unsigned int i=0; i < phrase.size(); i++) {
-    rd = rand() %  grammar.getProductions()[phrase[i]].size();
-    phrase[i] = grammar.getProductions()[phrase[i]][rd];
+  bool go = true;
+  while(go == true) {
+    go = false;
+    for(unsigned int i=0; i < phrase.size(); i++) {
+      if(!isWord(phrase[i])) {
+        go = true;
+        unsigned int nonTerminalTaille = phrase[i].find(">") - phrase[i].find("<") +1;
+        string nonTerminal = phrase[i].substr(phrase[i].find("<"), nonTerminalTaille);
+        std::cout << "nonTerminal" << nonTerminal << std::endl;
+        std::cout << "getProduction" << grammar.getProduction(nonTerminal) << std::endl;
+        phrase[i].replace(phrase[i].find("<"), nonTerminalTaille, grammar.getProduction(nonTerminal));
+      }
+    }
   }
 }
 

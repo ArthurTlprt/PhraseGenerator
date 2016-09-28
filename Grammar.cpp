@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <time.h>
+
 
 using namespace std;
 
@@ -29,6 +31,7 @@ Grammar::Grammar() {
 }
 
 Grammar::Grammar(string fileName) {
+  srand(time(NULL));
 	cout << fileName << " is now the name of the file" << endl;
 	this->fileName = fileName;
 	Grammar::readFile();
@@ -48,10 +51,10 @@ void Grammar::readFile() {
 		while(getline(file, line)) {
 			currentLine++;
 			//cout << "line " << currentLine << " ";
-			if(line.find("{") != -1) {
+			if(line.find("{") != string::npos) {
 				partBegin = currentLine;
 			}
-			if(line.find("{") == -1 && line.find("}") == -1) {
+			if(line.find("{") == string::npos && line.find("}") == string::npos) {
 				if(currentLine == partBegin+1) {
 					currentDiam = line;
 					productions.insert(
@@ -63,6 +66,7 @@ void Grammar::readFile() {
 						isAxiome = false;
 					}else{
 						productions[currentDiam].push_back( line.substr(0, line.length() -1) );
+            // std::cout << line.substr(0, line.length() -1) << std::endl;
 					}
 				}
 			}
@@ -77,4 +81,12 @@ void Grammar::readFile() {
 
  map<string, vector<string> > Grammar::getProductions() {
 	return this->productions;
+}
+
+string Grammar::getProduction(string nonTerminal) {
+  int rd;
+  rd = rand() %  Grammar::getProductions()[nonTerminal].size();
+  std::cout << "size = " << Grammar::getProductions()[nonTerminal].size() << std::endl;
+  std::cout << "rd = " << rd << std::endl;
+  return Grammar::getProductions()[nonTerminal][rd];
 }

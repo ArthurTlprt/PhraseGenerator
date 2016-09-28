@@ -1,0 +1,52 @@
+{
+<Expression>
+<Intro> <Verbe> <COD> <Complement> ;
+}
+{
+<Intro>
+Ca va ;
+ ;
+ ;
+ ;
+}
+{
+<Verbe>
+Il n'y a pas ;
+Avoir ;
+Elever ;
+tu as ;
+j'ai ;
+tu n'as pas ;
+j'ai pas ;
+}
+{
+<COD>
+des couilles ;
+un cul ;
+son poste ;
+une chance ;
+le cigare ;
+le feu ;
+la taupe ;
+la guillotine ;
+une pendule ;
+l'eurostar ;
+le barreau ;
+}
+{
+<Complement>
+au cul ;
+dans les fleurs ;
+aux fraises ;
+bordé de nouilles ;
+de cocu ;
+au bord des levres ;
+au moulin ;
+au lac ;
+qui pousse au trou ;
+qui tape à la porte ;
+au bout du four ;
+au bout du tunel ;
+entre les jambes ;
+en choufleur ;
+}
