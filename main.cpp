@@ -9,13 +9,16 @@ using namespace std;
 
 int main() {
 	Grammar myprod("expressions");
-
 	Phrase maphrase(myprod);
 	maphrase.print();
 
-	Grammar grammardepalyndrome("palyndrome");
+	Grammar grammarTdExo2("tdExo2");
+	Phrase motTdExo2(grammarTdExo2);
+	motTdExo2.print();
 
-	Phrase monpalyndrome(grammardepalyndrome);
-	monpalyndrome.print();
+	Grammar grammarTdExo4("tdExo4");
+	Phrase motTdExo4(grammarTdExo4);
+	motTdExo4.print();
+
 	return 0;
 }
