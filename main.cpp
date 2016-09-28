@@ -8,17 +8,31 @@
 using namespace std;
 
 int main() {
+	//TP1
 	Grammar myprod("expressions");
 	Phrase maphrase(myprod);
 	maphrase.print();
 
-	Grammar grammarTdExo2("tdExo2");
+	//TP2
+
+	//Exo1
+	Grammar grammarTdExo2("grammaires/tdExo2");
 	Phrase motTdExo2(grammarTdExo2);
 	motTdExo2.print();
 
-	Grammar grammarTdExo4("tdExo4");
+	Grammar grammarTdExo4("grammaires/tdExo4");
 	Phrase motTdExo4(grammarTdExo4);
 	motTdExo4.print();
+
+	Grammar grammarPalyn("grammaires/palyn");
+	Phrase motPalyn(grammarPalyn);
+	motPalyn.print();
+
+	//Exo2
+	Grammar grammarId("grammaires/id");
+	Phrase motId(grammarId);
+	motId.print();
+
 
 	return 0;
 }

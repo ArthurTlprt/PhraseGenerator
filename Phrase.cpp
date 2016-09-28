@@ -42,8 +42,8 @@ void Phrase::generate() {
         go = true;
         unsigned int nonTerminalTaille = phrase[i].find(">") - phrase[i].find("<") +1;
         string nonTerminal = phrase[i].substr(phrase[i].find("<"), nonTerminalTaille);
-        std::cout << "nonTerminal" << nonTerminal << std::endl;
-        std::cout << "getProduction" << grammar.getProduction(nonTerminal) << std::endl;
+        // std::cout << "nonTerminal" << nonTerminal << std::endl;
+        // std::cout << "getProduction" << grammar.getProduction(nonTerminal) << std::endl;
         phrase[i].replace(phrase[i].find("<"), nonTerminalTaille, grammar.getProduction(nonTerminal));
       }
     }

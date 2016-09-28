@@ -86,7 +86,7 @@ void Grammar::readFile() {
 string Grammar::getProduction(string nonTerminal) {
   int rd;
   rd = rand() %  Grammar::getProductions()[nonTerminal].size();
-  std::cout << "size = " << Grammar::getProductions()[nonTerminal].size() << std::endl;
-  std::cout << "rd = " << rd << std::endl;
+  // std::cout << "size = " << Grammar::getProductions()[nonTerminal].size() << std::endl;
+  // std::cout << "rd = " << rd << std::endl;
   return Grammar::getProductions()[nonTerminal][rd];
 }
