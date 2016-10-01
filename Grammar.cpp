@@ -57,17 +57,16 @@ void Grammar::readFile() {
 			if(line.find("{") == string::npos && line.find("}") == string::npos) {
 				if(currentLine == partBegin+1) {
 					currentDiam = line;
+          std::cout << "diam " << currentDiam << std::endl;
+          if(isAxiome) {
+						this->axiome = {currentDiam};
+						isAxiome = false;
+					}
 					productions.insert(
 						pair<string, vector<string> >(currentDiam, {})
 					);
 				}else{
-					if(isAxiome) {
-						this->axiome = split(line.substr(0, line.length() -1), ' ');
-						isAxiome = false;
-					}else{
-						productions[currentDiam].push_back( line.substr(0, line.length() -1) );
-            // std::cout << line.substr(0, line.length() -1) << std::endl;
-					}
+          productions[currentDiam].push_back( line.substr(0, line.length() -1) );
 				}
 			}
 			//cout << endl;

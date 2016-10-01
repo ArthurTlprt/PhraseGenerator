@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
 	//TP1
-	Grammar myprod("expressions");
+	Grammar myprod("grammaires/expressions");
 	Phrase maphrase(myprod);
 	maphrase.print();
 
@@ -33,6 +33,10 @@ int main() {
 	Phrase motId(grammarId);
 	motId.print();
 
+	//Exo3
+	Grammar grammarMathexp("grammaires/mathexp");
+	Phrase motMathexp(grammarMathexp);
+	motMathexp.print();
 
 	return 0;
 }
